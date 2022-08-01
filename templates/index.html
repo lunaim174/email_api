@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emails Table</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    </head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Emails Table</h2>
+				</div>
+			</div>
+            <div class="row">
+				<div>
+					<div class="table-wrap">
+						<table class="table table-bordered table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>To</th>
+                                    <th>From</th>
+                                    <th>Date</th>
+                                    <th>Subject</th>
+                                    <th>Message-ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for line in Emails_DB %}
+                                <tr>
+                                    <td>{{line.m_to}}</td>
+                                    <td>{{line.m_from}}</td>
+                                    <td>{{line.m_date}}</td>
+                                    <td>{{line.m_subj}}</td>
+                                    <td>{{line.m_id}}</td>
+                                </tr>
+                            {% endfor %}  
+                            </tbody>
+                        </table> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <p>This was really fun to learn. Thank you for the opportunity! It would be great if I get to learn a lot more about it with you.</p>
+    <p>Have a great week!</p>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
